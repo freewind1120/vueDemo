@@ -55,8 +55,9 @@
         font-size: $fontsize-large-xxx
         color: $color-blue
         transition: all 0.4s linear
-        transform: rotate(0)//进入角度0
-      &.move-enter-active, &.move-leave-active
+        // transform: rotate(0)//进入角度0
+      // &.move-enter-active, &.move-leave-active
+      //   transition: all 0.4s linear
       &.move-enter, &.move-leave-active
         opacity: 0 //进入前和离开后整体的透明度
         transform: translate3d(24px, 0, 0)

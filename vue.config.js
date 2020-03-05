@@ -26,6 +26,12 @@ module.exports = {
     }
   },
     devServer: {
+      // proxy:{
+      //   'api':{
+      //     target: 'http://loaclhost:7000',
+      //     changeOrigin:true
+      //   }
+      // },
       before(app) {
         app.get('/api/seller', function (req, res) {
           const id = req.query.id
@@ -53,5 +59,9 @@ module.exports = {
       .set('components',resolve('src/components'))
       .set('common',resolve('src/common'))
       .set('api', resolve('src/api'))
+
+      config.plugin('context')
+       .use(webpack.ContextReplacementPlugin,
+        [/moment[/\\]locale$/,/zh-cn/])
     }
 }
